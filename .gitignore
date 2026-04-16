@@ -5,6 +5,3 @@
 # Python Cache
 __pycache__/
 
-# Databases
-*.db
-*.sqlite3
