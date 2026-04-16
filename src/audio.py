@@ -49,14 +49,13 @@ def process_audio(video_path: str) -> list:
             "Only output the timestamps and text. Do not add any extra formatting or conversational text."
         )
         
-        # We can use the ultra-fast Lite model for audio!
+        
         response = client.models.generate_content(
             # Change this in BOTH src/vlm.py and src/audio.py
             model='gemini-2.5-flash-lite', # CHANGED to the Pro model bucket
             contents=[prompt, audio_file]
         )
-        # 4. Parse the output so ChromaDB can read it like a "frame"
-        # 4. Parse the output to get pure seconds and text
+        
         audio_metadata = []
         lines = response.text.strip().split('\n')
         

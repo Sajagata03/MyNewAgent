@@ -27,10 +27,10 @@ def generate_frame_descriptions(frame_metadata: List[Dict]) -> List[Dict]:
             try:
                 img = Image.open(image_path)
                 
-                # The modern syntax hitting the 2026 high-quota Flash-Lite model
+                
                 response = client.models.generate_content(
-                    # Change this in BOTH src/vlm.py and src/audio.py
-                    model='gemini-2.5-flash-lite', # CHANGED to the Pro model bucket
+                    
+                    model='gemini-2.5-flash-lite', 
                     contents=[prompt, img]
                 )
                 

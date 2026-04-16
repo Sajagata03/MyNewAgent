@@ -2,10 +2,10 @@ import chromadb
 from typing import List, Dict
 
 # Initialize ChromaDB client. 
-# This creates a database folder inside your data directory.
+# This creates a database folder inside data directory.
 client = chromadb.PersistentClient(path="./data/chroma_db")
 
-# Create or load a collection (think of this like a table in SQL)
+# Create or load a collection 
 collection = client.get_or_create_collection(name="video_frames")
 
 def store_frames_in_db(frame_metadata: List[Dict]):
@@ -63,7 +63,7 @@ def search_video(query_text: str, n_results: int = 3):
             })
     return matches
 
-    # Format the output nicely
+    # Format the output 
     if results['documents'][0]:
         for i in range(len(results['documents'][0])):
             desc = results['documents'][0][i]

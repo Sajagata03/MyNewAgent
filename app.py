@@ -14,7 +14,7 @@ from src.vector_db import store_frames_in_db, search_video, clear_database
 # Initialize states
 if "video_processed" not in st.session_state:
     st.session_state.video_processed = False
-    st.session_state.has_audio = False  # <-- NEW: Memory for audio status
+    st.session_state.has_audio = False  #  Memory for audio status
 
 # 1. Page Configuration
 st.set_page_config(page_title="VisionSearch AI", layout="wide")
@@ -48,7 +48,7 @@ def show_summary_popup(metadata):
     
     for frame in metadata:
         if frame.get("description"):
-            st.markdown(f"**⏱️ `{frame['timestamp_formatted']}`**")
+            st.markdown(f"** `{frame['timestamp_formatted']}`**")
             st.caption(frame['description'])
             st.markdown("---")
             
@@ -59,7 +59,7 @@ def show_summary_popup(metadata):
 # SIDEBAR: INGESTION PIPELINE (VISION ONLY)
 # ==========================================
 with st.sidebar:
-    st.title("⚙️ Engine Control")
+    st.title(" Engine Control")
     st.markdown("Ingest new video data into the Vector Database.")
     st.markdown("---")
     
