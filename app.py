@@ -1,5 +1,9 @@
 import streamlit as st
 import os
+from dotenv import load_dotenv  
+
+
+load_dotenv()
 
 from src.download import download_youtube_video
 from src.extract import extract_frames
@@ -15,7 +19,7 @@ if "video_processed" not in st.session_state:
 # 1. Page Configuration
 st.set_page_config(page_title="VisionSearch AI", layout="wide")
 
-# 2. Custom CSS Injection (Makes it look like a raw HTML/CSS web app)
+# 2. Custom CSS Injection 
 st.markdown("""
     <style>
     /* Clean up the main background and buttons */
@@ -26,6 +30,8 @@ st.markdown("""
     .stAlert { border-radius: 8px; border: 1px solid #333; }
     </style>
 """, unsafe_allow_html=True)
+
+
 
 # Initialize states
 if "video_processed" not in st.session_state:
